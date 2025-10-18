@@ -14,6 +14,8 @@ public class WheelTester : MonoBehaviour
     private float speedMultiplier = 0.1f;
     [SerializeField]
     private WheelChair wheelChair;
+    [SerializeField]
+    private float noSpokeBrakeTime = 0.5f;
 
     private SerialPort serialPort;
     private Thread readThread;
@@ -69,6 +71,8 @@ public class WheelTester : MonoBehaviour
         }
     }
 
+    private float noSpokeTime = 0f;
+
     void Update()
     {
         lock (messages)
@@ -92,12 +96,25 @@ public class WheelTester : MonoBehaviour
                     {
                         wheelChair.SetRightSpeed(speed);
                     }
+
+                    noSpokeTime = 0f;
+                    wheelChair.StopBrake();
                     // ApplyWheelForce(splitMessage[0] == "right" ? rightWheel : leftWheel, timeBetweenSpokes);
                 }
                 else
                 {
                     Debug.LogWarning("Invalid message: " + message);
                 }
+            }
+        }
+
+
+        if (noSpokeTime < noSpokeBrakeTime)
+        {
+            noSpokeTime += Time.deltaTime;
+            if (noSpokeTime >= noSpokeBrakeTime)
+            {
+                wheelChair.Brake();
             }
         }
         // transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -112,4 +129,5 @@ public class WheelTester : MonoBehaviour
         if (serialPort != null && serialPort.IsOpen)
             serialPort.Close();
     }
+
 }

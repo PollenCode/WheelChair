@@ -29,6 +29,18 @@ public class WheelChair : MonoBehaviour
         rightWheel.motorTorque = speed * driveSpeed;
     }
 
+    public void Brake()
+    {
+        rightWheel.brakeTorque = 100000;
+        leftWheel.brakeTorque = 100000;
+    }
+
+    public void StopBrake()
+    {
+        rightWheel.brakeTorque = 0;
+        leftWheel.brakeTorque = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
