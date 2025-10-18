@@ -25,6 +25,8 @@ public class WheelTester : MonoBehaviour
     void Start()
     {
         OpenSerialPort();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void OpenSerialPort()
