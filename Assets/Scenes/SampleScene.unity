@@ -527,7 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portName: COM87
   baudRate: 9600
-  speedMultiplier: 1
+  speedMultiplier: -1
   wheelChair: {fileID: 7257531185058608479}
 --- !u!1 &433094655
 GameObject:
@@ -1370,7 +1370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025347190}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26069674, y: 0.34967056, z: -0.101957716, w: 0.8940763}
+  m_LocalRotation: {x: 0.26069674, y: 0.34967062, z: -0.10195774, w: 0.8940762}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1901,7 +1901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780660591}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.244434, y: 0.35146272, z: -0.09559742, w: 0.8986585}
+  m_LocalRotation: {x: 0.24443401, y: 0.35146275, z: -0.09559744, w: 0.8986585}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2021,7 +2021,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6794e978312f9ea4092346917e013c94, type: 2}
+  - {fileID: 2100000, guid: cba66c276aed0874091de1c33eb3950d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2294,7 +2294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145200517}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2769164, y: 0.3477582, z: -0.1083012, w: 0.8891864}
+  m_LocalRotation: {x: 0.27691644, y: 0.34775823, z: -0.10830122, w: 0.8891864}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2605,7 +2605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c915a4a7cc32645aa37b6ba3ad790d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driveSpeed: 3
+  driveSpeed: 3.5
   damping: 0.05
   leftWheel: {fileID: 904010221}
   rightWheel: {fileID: 904010220}
