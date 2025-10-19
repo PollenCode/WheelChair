@@ -60,14 +60,25 @@ public class WheelChair : MonoBehaviour
         // rightWheel.motorTorque = motorSpeed;
         // leftWheel.motorTorque = motorSpeed;
 
-        // if (Input.GetKey(KeyCode.D))
-        // {
-        //     rightWheel.motorTorque = motorSpeed;
-        // }
-        // if (Input.GetKey(KeyCode.A))
-        // {
-        //     leftWheel.motorTorque = motorSpeed;
-        // }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+        {
+            StopBrake();
+            rightWheel.motorTorque = motorSpeed * driveSpeed;
+            leftWheel.motorTorque = motorSpeed * driveSpeed;
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                rightWheel.motorTorque *= 1.5f;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                leftWheel.motorTorque *= 1.5f;
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+        {
+            Brake();
+        }
 
         // moveRight = Input.GetKeyDown(KeyCode.D);
         // moveLeft = Input.GetKeyDown(KeyCode.A);
